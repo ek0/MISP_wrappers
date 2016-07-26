@@ -1,0 +1,81 @@
+
+= MISP Wrappers
+
+Scripts to interact with a remote MISP instance.
+
+= Installation
+
+Clone https://github.com/CIRCL/PyMISP[PyMISP] or install it using pip.
+Edit the `keys.py` file with your information.
+
+= Usage
+
+----
+PS D:\codes\python\misp_wrapper> C:\Python27\python.exe .\push_detection_name.py -h
+usage: push_detection_name.py [-h] -e EVENT -d DETECTION
+
+Push a filename to a remote MISP instance.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e EVENT, --event EVENT
+                        Event ID
+  -d DETECTION, --detection DETECTION
+                        Detection name to add
+----
+
+----
+PS D:\codes\python\misp_wrapper> C:\Python27\python.exe .\push_filename.py -h
+usage: push_filename.py [-h] -e EVENT --filename FILENAME
+
+Push a filename to a remote MISP instance.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e EVENT, --event EVENT
+                        Event ID
+  --filename FILENAME   Filename to push.
+----
+
+----
+PS D:\codes\python\misp_wrapper> C:\Python27\python.exe .\push_hash.py -h
+usage: push_hash.py [-h] -e EVENT [-f FILENAME] [--md5 MD5] [--sha1 SHA1]
+                    [--sha256 SHA256] [--comment COMMENT]
+
+Push a filename and its hashes to an existing event
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e EVENT, --event EVENT
+                        Event ID
+  -f FILENAME, --filename FILENAME
+                        Filename
+  --md5 MD5             MD5 of the sample
+  --sha1 SHA1           SHA1 of the sample
+  --sha256 SHA256       SHA256 of the sample
+  --comment COMMENT     Some comment to add
+----
+
+----
+PS D:\codes\python\misp_wrapper> C:\Python27\python.exe .\push_mutex.py -h
+usage: push_mutex.py [-h] -e EVENT --mutex MUTEX
+
+Push a mutex name to a remote MISP instance.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e EVENT, --event EVENT
+                        Event ID
+  --mutex MUTEX         Mutex to push.
+PS D:\codes\python\misp_wrapper> C:\Python27\python.exe .\push_regkey.py -h
+usage: push_regkey.py [-h] -e EVENT --regkey REGKEY [--value VALUE]
+
+Push a registry key path to a remote MISP instance.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -e EVENT, --event EVENT
+                        Event ID
+  --regkey REGKEY       Registry key to push.
+  --value VALUE         Registry key value.
+----
